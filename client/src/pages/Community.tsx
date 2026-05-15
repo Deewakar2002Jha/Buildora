@@ -13,7 +13,7 @@ const Community = () => {
 
     const fetchProjects = async () => {
        try {
-        const { data } = await api.get('/api/project/published');
+        const { data } = await api.get('/project/published');
         setProjects(data.projects);
         setLoading(false);
        } catch (error: any) {
