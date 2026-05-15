@@ -14,7 +14,7 @@ const View = () => {
 
   const fetchCode = async () => {
     try {
-      const { data } = await api.get(`/api/project/published/${projectId}`);
+      const { data } = await api.get(`/project/published/${projectId}`);
       setCode(data.code)
       setLoading(false)
     } catch (error: any) {

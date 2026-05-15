@@ -20,7 +20,7 @@ const Sidebar = ({isMenuOpen, project, setProject, isGenerating, setIsGenerating
 
     const fetchProject = async () => {
         try {
-            const { data } = await api.get(`/api/user/project/${project.id}`)
+            const { data } = await api.get(`/user/project/${project.id}`)
             setProject(data.project)
         } catch (error: any) {
             toast.error(error?.response?.data?.message || error.message);
@@ -33,8 +33,8 @@ const Sidebar = ({isMenuOpen, project, setProject, isGenerating, setIsGenerating
             const confirm = window.confirm('Are you sure you want to rollback to this version?')
             if(!confirm) return;
             setIsGenerating(true)
-            const { data } = await api.get(`/api/project/rollback/${project.id}/${versionId}`);
-            const { data: data2 } = await api.get(`/api/user/project/${project.id}`);
+            const { data } = await api.get(`/project/rollback/${project.id}/${versionId}`);
+            const { data: data2 } = await api.get(`/user/project/${project.id}`);
             toast.success(data.message)
             setProject(data2.project)
             setIsGenerating(false)
@@ -54,7 +54,7 @@ const Sidebar = ({isMenuOpen, project, setProject, isGenerating, setIsGenerating
             interval = setInterval(()=>{
                 fetchProject();
             },10000)
-            const {data} = await api.post(`/api/project/revision/${project.id}`, {message: input})
+            const {data} = await api.post(`/project/revision/${project.id}`, {message: input})
             fetchProject();
             toast.success(data.message)
             setInput('')

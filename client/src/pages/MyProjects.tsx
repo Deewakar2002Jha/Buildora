@@ -16,7 +16,7 @@ const MyProjects = () => {
 
     const fetchProjects = async () => {
         try {
-            const { data } = await api.get('/api/user/projects')
+            const { data } = await api.get('/user/projects')
             setProjects(data.projects)
             setLoading(false)
         } catch (error: any) {
@@ -29,7 +29,7 @@ const MyProjects = () => {
         try {
             const confirm = window.confirm('Are you sure you want to delete this project?');
             if(!confirm) return;
-            const { data } = await api.delete(`/api/project/${projectId}`)
+            const { data } = await api.delete(`/project/${projectId}`)
             toast.success(data.message);
             fetchProjects()
         } catch (error: any) {

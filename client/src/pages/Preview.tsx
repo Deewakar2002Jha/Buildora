@@ -17,7 +17,7 @@ const Preview = () => {
 
   const fetchCode = async () => {
    try {
-    const { data } = await api.get(`/api/project/preview/${projectId}`)
+    const { data } = await api.get(`/project/preview/${projectId}`)
     setCode(data.project.current_code)
     if(versionId){
       data.project.versions.forEach((version: Version)=>{

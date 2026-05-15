@@ -15,7 +15,7 @@ const Navbar = () => {
 
   const getCredits = async () => {
     try {
-      const { data } = await api.get('/api/user/credits');
+      const { data } = await api.get('/user/credits');
       setCredits(data.credits)
     } catch (error: any) {
       toast.error(error?.response?.data?.message || error.message)
