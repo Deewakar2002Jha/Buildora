@@ -65,12 +65,12 @@ const Home = () => {
           </button>
         </form>
 
-        <div className="flex flex-wrap items-center justify-center gap-16 md:gap-20 mx-auto mt-16">
-          <img className="max-w-28 md:max-w-32" src="https://saasly.prebuiltui.com/assets/companies-logo/framer.svg" alt="" />
-          <img className="max-w-28 md:max-w-32" src="https://saasly.prebuiltui.com/assets/companies-logo/huawei.svg" alt="" />
-          <img className="max-w-28 md:max-w-32" src="https://saasly.prebuiltui.com/assets/companies-logo/instagram.svg" alt="" />
-          <img className="max-w-28 md:max-w-32" src="https://saasly.prebuiltui.com/assets/companies-logo/microsoft.svg" alt="" />
-          <img className="max-w-28 md:max-w-32" src="https://saasly.prebuiltui.com/assets/companies-logo/walmart.svg" alt="" />
+        <div className="flex flex-wrap items-center justify-center gap-16 md:gap-20 mx-auto mt-16 opacity-50 grayscale">
+          {/* Logos placeholder - You can add your own logo SVGs here */}
+          <div className="text-xl font-bold italic">FORBES</div>
+          <div className="text-xl font-bold italic">TECHCRUNCH</div>
+          <div className="text-xl font-bold italic">WIRED</div>
+          <div className="text-xl font-bold italic">VERGE</div>
         </div>
       </section>
 
